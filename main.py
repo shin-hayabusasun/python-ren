@@ -22,10 +22,9 @@ def main():
     commit_pattern = get_commit_pattern(pattern_file)
 
     # 描画するパターンの中で最も日にちが早い箇所の基準点を設定
-    START_YEAR  = 2024
-    START_MONTH = 7 
-    START_DAY   = 30
-
+    START_YEAR  = 2023
+    START_MONTH = 1
+    START_DAY   = 1
     d = datetime.date(START_YEAR, START_MONTH, START_DAY)
     for b in commit_pattern.reshape(-1):
         if b == "1":
