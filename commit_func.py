@@ -17,6 +17,11 @@ def make_git_commit():
     subprocess.run(git_commit, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
 
+def make_git_push():
+    git_push = ["git", "push"]
+    subprocess.run(git_push, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+
+
 def change_commit_date(year, month, day):
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -33,6 +38,7 @@ def make_time_git_commit(d):
     make_git_add()
     make_git_commit()
     change_commit_date(d.year, d.month, d.day)
+    make_git_push()
 
 
 def main():
